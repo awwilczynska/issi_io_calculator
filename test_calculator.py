@@ -22,7 +22,7 @@ class TestCalculatorArithmetic:
         """Test addition with positive numbers."""
         assert Calculator(2.0, 3.111119).sum() == pytest.approx(5.111119)
 
-    def test_sum_negative_numbers(self):
+    def test_sum_with_negative(self):
         """Test addition with mixed positive and negative numbers."""
         assert Calculator(2.71, -3.92).sum() == pytest.approx(-1.21)
 

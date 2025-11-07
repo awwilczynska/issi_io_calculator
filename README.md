@@ -14,16 +14,23 @@ A Python-based calculator implementation with comprehensive testing and code cov
 ## Project Structure
 
 ```
-calculator/
+issi_io_calculator/
 ├── calculator.py          # Main calculator module
 ├── test_calculator.py     # Unit tests
-├── venv/                 # Virtual environment (recommended)
-├── htmlcov/              # Code coverage reports (HTML)
-├── .coverage             # Coverage data file
-├── .pytest_cache/        # Pytest cache directory
-├── __pycache__/          # Python bytecode cache
+├── README.md             # This file
 ├── .gitignore            # Git ignore rules
-└── README.md             # This file
+├── .coveragerc           # Coverage configuration file
+├── .coverage             # Coverage data file (generated after running coverage)
+├── .git/                 # Git version control directory
+├── .pytest_cache/        # Pytest cache directory (generated during testing)
+├── __pycache__/          # Python bytecode cache
+└── htmlcov/              # Code coverage reports (HTML)
+    ├── index.html        # Main coverage report
+    ├── calculator_py.html # Calculator module coverage
+    ├── test_calculator_py.html # Test file coverage
+    ├── function_index.html # Function coverage index
+    ├── class_index.html  # Class coverage index
+    └── [other HTML/CSS/JS files] # Supporting coverage assets
 ```
 
 ## Requirements
@@ -31,6 +38,22 @@ calculator/
 - Python 3.6+
 - pytest (for running tests)
 - coverage (for generating coverage reports)
+
+## Configuration Files
+
+The project includes several configuration files:
+
+- **`.coveragerc`**: Configuration for code coverage reporting, excludes `if __name__ == "__main__":` blocks from coverage analysis
+- **`.gitignore`**: Comprehensive Python gitignore rules for excluding temporary files, virtual environments, and IDE files
+
+## Generated Files & Directories
+
+During development and testing, the following files and directories are automatically generated:
+
+- **`.coverage`**: Coverage data file created when running coverage analysis
+- **`.pytest_cache/`**: Pytest cache directory for improved test performance
+- **`__pycache__/`**: Python bytecode cache for faster module loading
+- **`htmlcov/`**: HTML coverage reports directory with detailed coverage visualization
 
 ## Installation
 
@@ -134,6 +157,10 @@ coverage html
 ```
 
 Open `htmlcov/index.html` in your web browser to view the detailed coverage report.
+
+**Note**: The project includes a `.coveragerc` configuration file that:
+- Sets the source directory for coverage analysis
+- Excludes `if __name__ == "__main__":` blocks from coverage calculations to focus on testable code
 
 ## API Reference
 
